@@ -207,6 +207,7 @@ const Contact = () => {
                 
                 <button
                   type="submit"
+                  href="https://t.me/Darkieson"
                   disabled={isSubmitting}
                   className={cn(
                     "w-full py-3 px-6 rounded-lg font-medium text-white transition-all",
