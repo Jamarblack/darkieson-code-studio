@@ -38,7 +38,7 @@ const Contact = () => {
       console.log('Form submitted:', formData);
       toast({
         title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        description: "Thanks for reaching out. Drop a message on my Telegram handle",
       });
       
       setFormData({
