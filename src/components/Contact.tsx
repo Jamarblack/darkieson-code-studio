@@ -113,24 +113,24 @@ const Contact = () => {
                 <div className="flex space-x-4">
                   <a 
                     href="https://github.com/Jamarblack" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+{/*                     target="_blank" 
+                    rel="noopener noreferrer" */}
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
                     <Github size={20} />
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/mubaraq-abdulraheem-8749892b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+{/*                     target="_blank" 
+                    rel="noopener noreferrer" */}
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
                     <Linkedin size={20} />
                   </a>
                   <a 
                     href="t.me/Darkieson" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+{/*                     target="_blank" 
+                    rel="noopener noreferrer" */}
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
                     <Send size={20} />
