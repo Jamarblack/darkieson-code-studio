@@ -55,7 +55,7 @@ const Contact = () => {
     <section id="contact" ref={ref} className="py-24">
       <div className="responsive-container">
         <div className="text-center mb-16">
-          <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
+          <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4 w-[50px] h-[50px]">
             Get In Touch
           </span>
           <h2 className="section-heading">
