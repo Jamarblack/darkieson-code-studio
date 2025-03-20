@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +93,65 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+  
+  .section-heading {
+    @apply text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight;
+  }
+  
+  .section-subheading {
+    @apply text-xl md:text-2xl text-muted-foreground font-light max-w-3xl mx-auto mb-12;
+  }
+  
+  .nav-link {
+    @apply relative px-4 py-2 text-gray-700 transition-colors hover:text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-blue after:transition-all hover:after:w-full;
+  }
+  
+  .shine-effect {
+    @apply relative after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent after:animate-background-shine;
+  }
+  
+  .hover-up {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+}
+
+/* Progress bar styles for skills section */
+.progress-bar {
+  @apply h-2 rounded-full overflow-hidden bg-gray-200 relative mb-6;
+}
+
+.progress-bar-fill {
+  @apply h-full absolute top-0 left-0 transition-all duration-1000 ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image treatments */
+.profile-image {
+  @apply rounded-full overflow-hidden transition-all duration-500;
+}
+
+/* For the hero section blurred ellipse */
+.blur-ellipse {
+  @apply absolute rounded-full opacity-40 blur-3xl -z-10;
+}
+
+/* Responsive container */
+.responsive-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
