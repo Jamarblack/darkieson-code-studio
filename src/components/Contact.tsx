@@ -125,13 +125,21 @@ const Contact = () => {
                     href="https://www.linkedin.com/in/mubaraq-abdulraheem-8749892b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
-                    <Linkedin size={20} />
+                    <img 
+                      src="/linkedin.svg"
+                      alt="linkedin"
+                      className="w-10 h-10"
+                      />
                   </a>
                   <a 
                     href="t.me/Darkieson" 
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
-                    <Send size={20} />
+                    <img
+                      src="/telegram"
+                      alt="telegram"
+                      className="w-10 h-10"
+                      />
                   </a>
                 </div>
               </div>
