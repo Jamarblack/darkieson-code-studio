@@ -9,9 +9,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { useInView } from "react-intersection-observer";
 
-// Add react-intersection-observer
-<lov-add-dependency>react-intersection-observer@^9.8.1</lov-add-dependency>
-
 const Index = () => {
   useEffect(() => {
     // Scroll to top on mount
