@@ -31,7 +31,7 @@ const Navbar = () => {
             className="flex items-center gap-2 text-xl font-bold text-primary transition-opacity hover:opacity-80"
           >
             <img 
-              src="/lovable-uploads/f1a553c3-7360-431b-a71e-4b2096cf865a.png" 
+              src="/lovable-uploads/10ce7542-9eb7-434c-9ad1-22d2092d8ed9.png" 
               alt="Darkieson Logo" 
               className="h-10 w-10 rounded-full animate-pulse-slow" 
             />

@@ -57,7 +57,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-purple rounded-full blur-xl opacity-20 animate-pulse-slow"></div>
               <img 
-                src="/lovable-uploads/f1a553c3-7360-431b-a71e-4b2096cf865a.png" 
+                src="/lovable-uploads/10ce7542-9eb7-434c-9ad1-22d2092d8ed9.png" 
                 alt="Darkieson" 
                 className="profile-image w-64 h-64 md:w-80 md:h-80 object-cover relative z-10 border-4 border-white shadow-xl" 
               />
