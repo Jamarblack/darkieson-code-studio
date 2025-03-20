@@ -120,7 +120,7 @@ const Contact = () => {
                       alt="github"
                       className="w-10 h-10"
                       />
-                    <p className='w-5 h-5'>GitHub</p>  
+                     <span className="text-sm font-medium text-black-400 hover:text-blue-700">GitHub</span>
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/mubaraq-abdulraheem-8749892b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
@@ -131,7 +131,7 @@ const Contact = () => {
                       alt="linkedin"
                       className="w-10 h-10"
                       />
-                    <p className='w-5 h-5'>LinkedIn</p>  
+                     <span className="text-sm font-medium text-blue-400 hover:text-blue-700">LinkedIn</span> 
                   </a>
                   <a 
                     href="https://t.me/Darkieson" 
@@ -142,7 +142,7 @@ const Contact = () => {
                       alt="telegram"
                       className="w-10 h-10"
                       />
-                    <p className='w-5 h-5'>Telegram</p>  
+                     <span className="text-sm font-medium text-blue-400 hover:text-blue-700">Telegram</span>
                   </a>
                 </div>
               </div>
