@@ -132,11 +132,11 @@ const Contact = () => {
                       />
                   </a>
                   <a 
-                    href="t.me/Darkieson" 
+                    href="https://t.me/Darkieson" 
                     className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
                   >
                     <img
-                      src="/telegram"
+                      src="/telegram.svg"
                       alt="telegram"
                       className="w-10 h-10"
                       />
