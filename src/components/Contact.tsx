@@ -1,9 +1,14 @@
-
 import React, { useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
 import { useToast } from "@/hooks/use-toast";
 import { Github, Linkedin, Send } from "lucide-react";
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "@/components/ui/tooltip";
 
 const Contact = () => {
   const { ref, inView } = useInView({
@@ -111,39 +116,68 @@ const Contact = () => {
               <div className="mt-10">
                 <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
                 <div className="flex space-x-4">
-                  <a 
-                    href="https://github.com/Jamarblack" 
-                    className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
-                  >
-                    <img 
-                      src="/github.svg"
-                      alt="github"
-                      className="w-10 h-10"
-                      />
-                    <span className="text-sm font-medium text-black-400 hover:text-blue-700">GitHub</span>
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/mubaraq-abdulraheem-8749892b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                    className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
-                  >
-                    <img 
-                      src="/linkedin.svg"
-                      alt="linkedin"
-                      className="w-10 h-10"
-                      />
-                    <span className="text-sm font-medium text-blue-400 hover:text-blue-700">LinkedIn</span> 
-                  </a>
-                  <a 
-                    href="https://t.me/Darkieson" 
-                    className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
-                  >
-                    <img
-                      src="/telegram.svg"
-                      alt="telegram"
-                      className="w-10 h-10"
-                      />
-                    <span className="text-sm font-medium text-blue-400 hover:text-blue-700">Telegram</span>
-                  </a>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a 
+                          href="https://github.com/Jamarblack" 
+                          className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
+                          aria-label="GitHub"
+                        >
+                          <img 
+                            src="/github.svg"
+                            alt="github"
+                            className="w-10 h-10"
+                          />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>GitHub</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a 
+                          href="https://www.linkedin.com/in/mubaraq-abdulraheem-8749892b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                          className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
+                          aria-label="LinkedIn"
+                        >
+                          <img 
+                            src="/linkedin.svg"
+                            alt="linkedin"
+                            className="w-10 h-10"
+                          />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>LinkedIn</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <a 
+                          href="https://t.me/Darkieson" 
+                          className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-brand-blue transition-all hover-up"
+                          aria-label="Telegram"
+                        >
+                          <img
+                            src="/telegram.svg"
+                            alt="telegram"
+                            className="w-10 h-10"
+                          />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Telegram</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </div>
               </div>
             </div>
