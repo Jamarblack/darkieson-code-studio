@@ -42,7 +42,7 @@ const Contact = () => {
     setTimeout(() => {
       console.log('Form submitted:', formData);
       toast({
-        title: "Message sent!",
+        title: "Message sent! Drop a message on my Telegram Handle and let's connect",
         description: "Thanks for reaching out. Drop a message on my Telegram handle",
       });
       
