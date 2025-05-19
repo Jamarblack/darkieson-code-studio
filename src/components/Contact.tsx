@@ -1,7 +1,27 @@
+
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useInView } from "react-intersection-observer";
-import { Send } from 'lucide-react';
+
+// Inline SVG import for Telegram
+const TelegramSVG = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-send"
+    {...props}
+  >
+    <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/>
+    <path d="m21.854 2.147-10.94 10.939"/>
+  </svg>
+);
 
 interface FormData {
   name: string;
@@ -100,13 +120,13 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "w-full flex justify-center items-center px-4 py-3 sm:px-6 sm:py-3 rounded-lg font-medium text-white transition-all",
+                  "w-full flex flex-row items-center justify-center gap-2 px-4 py-3 sm:px-6 sm:py-3 rounded-lg font-medium text-white transition-all",
                   "text-base sm:text-lg bg-brand-blue hover:bg-brand-blue/90 hover-up"
                 )}
-                style={{ display: "inline-block", textAlign: "center" }}
+                style={{ textAlign: "center" }}
               >
-                <span className="mr-2">Send Message</span>
-                <Send className="w-5 h-5" />
+                <span>Send Message</span>
+                <TelegramSVG className="w-5 h-5" />
               </a>
             </div>
           </form>
@@ -117,3 +137,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
