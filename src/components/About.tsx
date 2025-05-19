@@ -16,8 +16,9 @@ const About = () => {
           <span className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
             About Me
           </span>
-          <h2 className="section-heading">
+          <h2 className="section-heading animate-section-fade-in relative">
             Who I Am
+            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A passionate web developer dedicated to creating beautiful, functional, and user-centered digital experiences.

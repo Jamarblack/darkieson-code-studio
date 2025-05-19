@@ -83,8 +83,9 @@ const Projects = () => {
           <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
             My Work
           </span>
-          <h2 className="section-heading">
+          <h2 className="section-heading animate-section-fade-in relative">
             Featured Projects
+            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A selection of my recent work showcasing my skills and expertise in web development.

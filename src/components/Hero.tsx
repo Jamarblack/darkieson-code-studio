@@ -26,8 +26,9 @@ const Hero = () => {
             <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4 animate-fade-in-fast">
               Web Developer
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-tight bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink bg-clip-text text-transparent animate-section-fade-in relative">
               Crafting <span className="text-brand-blue">digital</span> experiences.
+              <span className="absolute left-1/2 -translate-x-1/2 mt-2 h-1 w-24 rounded bg-gradient-to-r from-brand-purple to-brand-pink opacity-70" />
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-xl">
               Hi, I'm Darkieson. I design and develop modern websites and applications that focus on clean design and seamless interaction.

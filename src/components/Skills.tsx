@@ -49,8 +49,9 @@ const Skills = () => {
           <span className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
             My Skills
           </span>
-          <h2 className="section-heading">
+          <h2 className="section-heading animate-section-fade-in relative">
             Expertise & Capabilities
+            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A comprehensive overview of my technical abilities and soft skills that I bring to every project.
