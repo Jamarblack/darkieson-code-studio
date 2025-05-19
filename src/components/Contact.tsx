@@ -60,7 +60,7 @@ const Contact = () => {
     <section id="contact" ref={ref} className="py-24">
       <div className="responsive-container">
         <div className="text-center mb-16">
-          <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4 w-[80px] h-[80px]">
+          <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-6 py-1 rounded-full mb-4 w-[80px] h-[80px]">
             Get In Touch
           </span>
           <h2 className="section-heading animate-section-fade-in relative">
