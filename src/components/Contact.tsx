@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
@@ -24,8 +25,8 @@ const Contact = () => {
     message: ''
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
+  // Removed isSubmitting and form submit handling, as button is now a link
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -34,28 +35,6 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      toast({
-        title: "Message sent! Drop a message on my Telegram Handle and let's connect",
-        description: "Thanks for reaching out. Drop a message on my Telegram handle",
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
   return (
     <section id="contact" ref={ref} className="py-24">
       <div className="responsive-container">
@@ -188,7 +167,7 @@ const Contact = () => {
             "transition-all duration-700 delay-300",
             inView ? "opacity-100" : "opacity-0 translate-y-10"
           )}>
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-sm">
+            <form className="bg-white p-8 rounded-2xl shadow-sm">
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
               
               <div className="space-y-6">
@@ -240,18 +219,19 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
+                <a
+                  href="https://t.me/Darkieson"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    "w-full py-3 px-6 rounded-lg font-medium text-white transition-all",
-                    isSubmitting 
-                      ? "bg-gray-400 cursor-not-allowed" 
-                      : "bg-brand-blue hover:bg-brand-blue/90 hover-up"
+                    "w-full py-3 px-6 rounded-lg font-medium text-white flex justify-center items-center transition-all",
+                    "bg-brand-blue hover:bg-brand-blue/90 hover-up"
                   )}
+                  style={{ display: 'inline-block', textAlign: 'center' }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
+                  <span className="mr-2">Send Message</span>
+                  <Send className="w-5 h-5" />
+                </a>
               </div>
             </form>
           </div>
@@ -262,3 +242,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
