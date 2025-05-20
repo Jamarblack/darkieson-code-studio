@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
@@ -85,7 +84,6 @@ const Projects = () => {
           </span>
           <h2 className="section-heading animate-section-fade-in relative">
             Featured Projects
-            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A selection of my recent work showcasing my skills and expertise in web development.

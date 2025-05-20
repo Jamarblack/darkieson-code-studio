@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
@@ -18,7 +17,6 @@ const About = () => {
           </span>
           <h2 className="section-heading animate-section-fade-in relative">
             Who I Am
-            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A passionate web developer dedicated to creating beautiful, functional, and user-centered digital experiences.

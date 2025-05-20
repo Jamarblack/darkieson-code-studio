@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
@@ -51,7 +50,6 @@ const Skills = () => {
           </span>
           <h2 className="section-heading animate-section-fade-in relative">
             Expertise & Capabilities
-            <span className="section-heading-accent" />
           </h2>
           <p className="section-subheading">
             A comprehensive overview of my technical abilities and soft skills that I bring to every project.

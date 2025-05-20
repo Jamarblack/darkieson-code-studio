@@ -106,14 +106,11 @@
   }
   
   .section-heading {
-    @apply text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink bg-clip-text text-transparent relative;
-    /* Gradient text with accent underline */
+    @apply font-display font-bold mb-4 tracking-tight bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl leading-tight;
+    /* Bigger, bolder, catching! No accent underline */
     animation: section-fade-in 1.1s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
-  .section-heading-accent {
-    @apply absolute left-1/2 -translate-x-1/2 mt-2 h-1 w-16 rounded bg-gradient-to-r from-brand-purple to-brand-pink opacity-70;
-    content: '';
-  }
+  /* Remove .section-heading-accent as it will no longer be used */
   .section-subheading {
     @apply text-xl md:text-2xl text-muted-foreground font-light max-w-3xl mx-auto mb-12 animate-fade-in-slow;
   }
