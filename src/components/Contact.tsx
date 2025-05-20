@@ -240,7 +240,7 @@ const Contact = () => {
                   style={{ textAlign: "center" }}
                   aria-label="Send Message via Telegram"
                 >
-                  <TelegramSVG className="w-5 h-5" />
+                  <img src="/telegram.svg" className="w-5 h-5" />
                   <span>Send Message</span>
                 </a>
               </div>
