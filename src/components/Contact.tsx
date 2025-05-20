@@ -63,9 +63,6 @@ const Contact = () => {
           <span className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
             Contact
           </span>
-          <h2 className="section-heading animate-section-fade-in relative">
-            Get In Touch
-          </h2>
           <p className="section-subheading">
             Feel free to reach out for questions, collaborations, or just a friendly hello.
           </p>
