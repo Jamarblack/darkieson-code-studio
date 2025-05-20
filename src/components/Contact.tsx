@@ -115,19 +115,23 @@ const Contact = () => {
                   className="w-full border border-gray-200 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-gray-800 bg-gray-50 focus:ring-2 focus:ring-brand-blue outline-none transition resize-none"
                 ></textarea>
               </div>
-              <a
-                href="https://t.me/Darkieson"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "w-full flex flex-row items-center justify-center gap-2 px-4 py-3 sm:px-6 sm:py-3 rounded-lg font-medium text-white transition-all",
-                  "text-base sm:text-lg bg-brand-blue hover:bg-brand-blue/90 hover-up"
-                )}
-                style={{ textAlign: "center" }}
-              >
-                <span>Send Message</span>
-                <TelegramSVG className="w-5 h-5" />
-              </a>
+              {/* The Telegram send button */}
+              <div className="flex">
+                <a
+                  href="https://t.me/Darkieson"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "w-full flex flex-row items-center justify-center gap-2 px-4 py-3 sm:px-6 sm:py-3 rounded-lg font-medium text-white transition-all",
+                    "text-base sm:text-lg bg-brand-blue hover:bg-brand-blue/90 hover-up"
+                  )}
+                  style={{ textAlign: "center" }}
+                  aria-label="Send Message via Telegram"
+                >
+                  <TelegramSVG className="w-5 h-5" />
+                  <span>Send Message</span>
+                </a>
+              </div>
             </div>
           </form>
         </div>
