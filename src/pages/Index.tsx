@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
-import Contact from '@/components/Contact';
+import ContactDetails from '@/components/ContactDetails';
 import Footer from '@/components/Footer';
 import { useInView } from "react-intersection-observer";
 
@@ -22,7 +22,7 @@ const Index = () => {
       <About />
       <Projects />
       <Skills />
-      <Contact />
+      <ContactDetails />
       <Footer />
     </div>
   );
