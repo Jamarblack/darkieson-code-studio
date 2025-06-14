@@ -1,8 +1,21 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from '@/lib/utils';
-import { Github, Linkedin, Telegram, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+
+// Custom Telegram SVG icon component
+const TelegramIcon = ({ size = 22 }: { size?: number }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-.38.24-1.51.99-.21.15-.46.22-.74.22-.24 0-.71-.14-1.13-.25-.51-.14-.92-.22-.88-.46.02-.12.16-.24.4-.38 1.61-.7 2.69-1.16 3.24-1.38 1.53-.64 1.85-.75 2.05-.75.05 0 .15.01.21.09.05.06.06.14.07.2-.01.06.01.13 0 .18z"/>
+  </svg>
+);
 
 const SOCIALS = [
   {
@@ -18,7 +31,7 @@ const SOCIALS = [
   {
     href: "https://t.me/Darkieson",
     label: "Telegram",
-    icon: Telegram,
+    icon: TelegramIcon,
   },
   {
     href: "mailto:darkiesoncodestudio@gmail.com",
