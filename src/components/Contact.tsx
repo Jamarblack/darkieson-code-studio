@@ -57,7 +57,7 @@ const Contact = () => {
   });
 
   return (
-    <section id="contact" ref={ref} className="py-24">
+    <section id="contact" ref={ref} className="py-24 dark:bg-gray-950 dark:text-gray-50 bg-gray-50">
       <div className="responsive-container">
         <div className="text-center mb-16">
           <span className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">

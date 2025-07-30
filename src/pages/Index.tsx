@@ -8,6 +8,8 @@ import Skills from '@/components/Skills';
 import ContactDetails from '@/components/ContactDetails';
 import Footer from '@/components/Footer';
 import { useInView } from "react-intersection-observer";
+import ContactForm from '@/components/ContactForm';
+import ContactSocials from '@/components/ContactSocials';
 
 const Index = () => {
   useEffect(() => {
@@ -16,13 +18,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Navbar />
       <Hero />
       <About />
       <Projects />
       <Skills />
       <ContactDetails />
+      <ContactForm />
+      <ContactSocials />
       <Footer />
     </div>
   );

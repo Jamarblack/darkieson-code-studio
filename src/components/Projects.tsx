@@ -76,7 +76,7 @@ const Projects = () => {
   });
 
   return (
-    <section id="projects" ref={ref} className="py-24">
+    <section id="projects" ref={ref} className="py-24 dark:bg-gray-950 dark:text-gray-50 bg-gray-50">
       <div className="responsive-container">
         <div className="text-center mb-16">
           <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
@@ -95,7 +95,7 @@ const Projects = () => {
             <div 
               key={project.id} 
               className={cn(
-                "group relative bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-700 hover:shadow-xl",
+                "group relative bg-white rounded-2xl overflow-hidden shadow-md dark:bg-gray-950 dark:border-2 transition-all duration-700 hover:shadow-xl",
                 inView 
                   ? "opacity-100 translate-y-0" 
                   : "opacity-0 translate-y-10",

@@ -37,7 +37,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form className="bg-white p-5 sm:p-8 rounded-2xl shadow-sm max-w-full sm:max-w-lg md:max-w-xl mx-auto">
+    <form className="bg-white dark:bg-gray-950 p-5 sm:p-8 rounded-2xl shadow-sm max-w-full sm:max-w-lg md:max-w-xl mx-auto">
       <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
       <div className="space-y-4 sm:space-y-6">
         <div>

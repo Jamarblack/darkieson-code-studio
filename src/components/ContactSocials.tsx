@@ -30,14 +30,14 @@ const SOCIALS = [
 ];
 
 const ContactSocials: React.FC = () => (
-  <div className="mt-8 mb-8 flex flex-wrap justify-center gap-8">
+  <div className="mt-8 mb-8 dark:bg-gray-950 flex flex-wrap justify-center gap-8">
     {SOCIALS.map(({ href, icon, label }) => (
       <div key={label} className="flex flex-col items-center">
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-brand-blue transition-all hover:bg-gray-200 hover:text-brand-blue hover:scale-105 hover:shadow-lg"
+          className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-brand-blue transition-all hover:bg-gray-200 hover:text-brand-blue hover:scale-105 hover:shadow-lg"
           aria-label={label}
         >
           {icon}

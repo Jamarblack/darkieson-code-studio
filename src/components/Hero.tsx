@@ -10,7 +10,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center py-20 overflow-hidden dark:bg-gray-950 dark:text-gray-50 bg-white text-gray-900">
       {/* Background Effects */}
       <div className="blur-ellipse w-[500px] h-[500px] top-1/4 -left-48 bg-brand-blue/30"></div>
       <div className="blur-ellipse w-[400px] h-[400px] bottom-0 right-0 bg-brand-purple/20"></div>
@@ -23,7 +23,7 @@ const Hero = () => {
               isVisible && "opacity-100"
             )}
           >
-            <span className="inline-block bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4 animate-fade-in-fast">
+            <span className="inline-block bg-gray-100 text-gray-700 h-7 text-sm font-medium px-3 py-1 rounded-full mb-4 animate-fade-in-fast dark:bg-gradient-to-r from-brand-purple to-brand-pink opacity-70">
               Web Developer
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-tight bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink bg-clip-text text-transparent animate-section-fade-in relative">

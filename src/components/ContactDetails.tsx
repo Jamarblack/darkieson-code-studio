@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const ContactDetails: React.FC = () => (
-  <div className="space-y-6">
+  <div className="space-y-6 dark:bg-gray-950">
     <div className="flex items-center space-x-4">
       <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-brand-blue flex-shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -38,7 +38,7 @@ const ContactDetails: React.FC = () => (
     </div>
 
     {/* Connect With Me */}
-    <div className="mt-10">
+    {/* <div className="mt-10">
       <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
       <div className="flex space-x-4">
         <TooltipProvider>
@@ -102,7 +102,7 @@ const ContactDetails: React.FC = () => (
           </Tooltip>
         </TooltipProvider>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 

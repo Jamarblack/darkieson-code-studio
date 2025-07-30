@@ -55,7 +55,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 shadow",
         isScrolled
-          ? "py-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-md"
+          ? "py-2 bg-white/80 dark:bg-gray-950 dark:text-gray-50 backdrop-blur-lg shadow-md"
           : "py-4 bg-transparent"
       )}
     >
@@ -86,7 +86,7 @@ const Navbar = () => {
 
           {/* Socials (Desktop only) */}
           <div className="hidden md:flex items-center space-x-2 ml-4">
-            {SOCIALS.map(({ href, label, icon: Icon }) => (
+            {/* {SOCIALS.map(({ href, label, icon: Icon }) => (
               <a
                 key={label}
                 href={href}
@@ -97,7 +97,7 @@ const Navbar = () => {
               >
                 <Icon size={22} />
               </a>
-            ))}
+            ))} */}
             <div className="ml-2">
               <ThemeToggle />
             </div>

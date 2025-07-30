@@ -42,7 +42,7 @@ const Skills = () => {
   });
 
   return (
-    <section id="skills" ref={ref} className="py-24 bg-gray-50">
+    <section id="skills" ref={ref} className="py-24 bg-gray-50 dark:bg-gray-950 dark:text-gray-50">
       <div className="responsive-container">
         <div className="text-center mb-16">
           <span className="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
@@ -97,7 +97,7 @@ const Skills = () => {
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               {additionalSoftSkills.map((skill, index) => (
-                <div key={index} className="bg-white rounded-lg border border-gray-100 p-4 text-center hover-up">
+                <div key={index} className="bg-white dark:text-gray-950 rounded-lg border border-gray-100 p-4 text-center hover-up">
                   <span className="font-medium">{skill.name}</span>
                 </div>
               ))}
