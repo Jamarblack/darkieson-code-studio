@@ -53,14 +53,14 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 shadow",
+        "fixed top-0 w-full z-50 transition-all  duration-300 shadow",
         isScrolled
-          ? "py-2 bg-white/80 dark:bg-gray-950 dark:text-gray-50 backdrop-blur-lg shadow-md"
+          ? "py-2 bg-white/80 dark:bg-gray-950 rounded-b-2xl dark:text-gray-50 backdrop-blur-lg shadow-md border-b-2"
           : "py-4 bg-transparent"
       )}
     >
       <div className="responsive-container">
-        <nav className="flex items-center justify-between gap-4">
+        <nav className="flex items-center  justify-between gap-4">
           {/* Brand/Logo */}
           <a
             href="#hero"
@@ -78,10 +78,10 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#about" className="nav-link">About</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#skills" className="nav-link">Skills</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#about" className="nav-link p-3 hover:text-blue-800 ">About</a>
+            <a href="#projects" className="nav-link hover:text-blue-800 ">Projects</a>
+            <a href="#skills" className="nav-link hover:text-blue-800 ">Skills</a>
+            <a href="#contact" className="nav-link hover:text-blue-800 ">Contact</a>
           </div>
 
           {/* Socials (Desktop only) */}

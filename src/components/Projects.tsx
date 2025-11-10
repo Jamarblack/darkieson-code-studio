@@ -19,7 +19,7 @@ const projects: Project[] = [
     description: "A modern e-commerce platform with cart functionality, user authentication, and payment processing.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    demoUrl: "#",
+    demoUrl: "https://darkieson-store.vercel.app/",
     delay: 100,
   },
   {
@@ -28,7 +28,7 @@ const projects: Project[] = [
     description: "A clean, minimalist portfolio template for creative professionals and agencies.",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3",
     technologies: ["HTML", "CSS", "JavaScript", "GSAP"],
-    demoUrl: "#",
+    demoUrl: "https://craft-port.vercel.app/",
     delay: 200,
   },
   {
