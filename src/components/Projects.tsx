@@ -55,7 +55,7 @@ const projects: Project[] = [
     description: "A feature-rich social network with real-time messaging and content sharing capabilities.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3",
     technologies: ["React Native", "GraphQL", "Apollo", "MongoDB"],
-    demoUrl: "https://huppy.vercel.app/",
+    demoUrl: "https://huppy.vercel.app",
     delay: 500,
   },
   {
