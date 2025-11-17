@@ -37,7 +37,7 @@ const projects: Project[] = [
     description: "A productivity app designed to help teams organize and track their projects efficiently.",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3",
     technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    demoUrl: "#",
+    demoUrl: "https://taskflow-brown-alpha.vercel.app/",
     delay: 300,
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
     description: "An interactive dashboard providing real-time financial data visualization and analytics.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3",
     technologies: ["React", "D3.js", "Express", "MySQL"],
-    demoUrl: "#",
+    demoUrl: "https://finance-hub-five.vercel.app/",
     delay: 400,
   },
   {
@@ -55,7 +55,7 @@ const projects: Project[] = [
     description: "A feature-rich social network with real-time messaging and content sharing capabilities.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3",
     technologies: ["React Native", "GraphQL", "Apollo", "MongoDB"],
-    demoUrl: "#",
+    demoUrl: "https://huppy.vercel.app/",
     delay: 500,
   },
   {
