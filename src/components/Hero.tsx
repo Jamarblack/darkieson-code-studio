@@ -1,91 +1,152 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { ArrowRight, Terminal, ShieldCheck, Cpu } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [text, setText] = useState("");
+  const fullText = "Full-Stack Operative // Building secure, scalable, and aesthetic digital architectures.";
   
+  // Typewriter effect for subtext
   useEffect(() => {
-    setIsVisible(true);
+    let index = 0;
+    const timer = setInterval(() => {
+      setText(fullText.slice(0, index));
+      index++;
+      if (index > fullText.length) clearInterval(timer);
+    }, 30);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center py-20 overflow-hidden dark:bg-gray-950 dark:text-gray-50 bg-white text-gray-900">
-      {/* Background Effects */}
-      <div className="blur-ellipse w-[500px] h-[500px] top-1/4 -left-48 bg-brand-blue/30"></div>
-      <div className="blur-ellipse w-[400px] h-[400px] bottom-0 right-0 bg-brand-purple/20"></div>
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black text-white">
       
-      <div className="responsive-container relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          <div 
-            className={cn(
-              "md:w-1/2 text-center md:text-left transition-all duration-1000 opacity-0",
-              isVisible && "opacity-100"
-            )}
-          >
-            <span className="inline-block bg-gray-100 text-gray-700 h-7 text-sm font-medium px-3 py-1 rounded-full mb-4 animate-fade-in-fast dark:bg-gradient-to-r from-brand-purple to-brand-pink opacity-70">
-              Web Developer
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-tight bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink bg-clip-text text-transparent animate-section-fade-in relative">
-              Crafting <span className="text-brand-blue">digital</span> experiences.
-              <span className="absolute left-1/2 -translate-x-1/2 mt-2 h-1 w-24 rounded bg-gradient-to-r from-brand-purple to-brand-pink opacity-70" />
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-xl">
-              Hi, I'm Darkieson. I design and develop modern websites and applications that focus on clean design and seamless interaction.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a 
-                href="#projects"
-                className="shine-effect px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover-up"
-              >
-                View My Work
-              </a>
-              <a 
-                href="#contact"
-                className="px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-lg transition-all hover:bg-gray-200 hover-up"
-              >
-                Get In Touch
-              </a>
-            </div>
-          </div>
+      {/* 1. THE MATRIX BACKGROUND (CSS Grid) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Moving Grid Floor */}
+        <div className="absolute bottom-0 left-[-50%] right-[-50%] h-[50vh] bg-[linear-gradient(to_right,rgba(0,255,65,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,255,65,0.1)_1px,transparent_1px)] bg-[size:40px_40px] [transform:perspective(500px)_rotateX(60deg)] animate-background-shine opacity-30"></div>
+        {/* Radial Gradient to fade edges */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+      </div>
+
+      <div className="responsive-container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* 2. TEXT CONTENT: THE TERMINAL */}
+        <div className="order-2 lg:order-1 space-y-8">
           
-          <div 
-            className={cn(
-              "md:w-1/2 flex justify-center transition-all duration-1000 translate-y-10 opacity-0",
-              isVisible && "translate-y-0 opacity-100"
-            )}
+          {/* Status Badge */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 border border-brand-neon/50 bg-brand-neon/10 px-4 py-1 text-xs font-mono text-brand-neon tracking-widest uppercase"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-purple rounded-full blur-xl opacity-20 animate-pulse-slow"></div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-neon opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-neon"></span>
+            </span>
+            System_Status: Online
+          </motion.div>
+
+          {/* Main Glitch Heading */}
+          <div className="relative">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-white mb-2">
+              <span className="glitch-text block" data-text="WAKE_UP">WAKE_UP</span>
+              <span className="text-brand-neon">NEO_DEV</span>
+            </h1>
+            <p className="font-mono text-gray-400 text-sm md:text-base mt-4 border-l-2 border-brand-neon pl-4 h-12">
+              <span className="text-brand-neon mr-2">{`>`}</span>
+              {text}
+              <span className="animate-cursor-blink">_</span>
+            </p>
+          </div>
+
+          {/* Stats / Tech Stack */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs text-gray-500"
+          >
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-brand-neon" />
+              <span>SECURE_CODE</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-brand-neon" />
+              <span>OPTIMIZED_CORE</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Terminal className="w-4 h-4 text-brand-neon" />
+              <span>CMD_ACCESS</span>
+            </div>
+          </motion.div>
+
+          {/* Buttons */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="flex flex-wrap gap-4"
+          >
+            <a 
+              href="#projects"
+              className="group relative px-8 py-4 bg-brand-neon text-black font-bold font-mono uppercase tracking-wider overflow-hidden hover:text-white transition-colors"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Initiate_Project <ArrowRight className="w-4 h-4" />
+              </span>
+              <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+            </a>
+            
+            <a 
+              href="#contact"
+              className="px-8 py-4 border border-white/20 text-white font-mono uppercase tracking-wider hover:bg-white/10 transition-all hover:border-brand-neon hover:text-brand-neon"
+            >
+              Establish_Uplink
+            </a>
+          </motion.div>
+        </div>
+
+        {/* 3. IMAGE: THE HOLOGRAM */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="order-1 lg:order-2 flex justify-center relative"
+        >
+          <div className="relative w-72 h-72 md:w-96 md:h-96">
+            {/* Spinning Rings */}
+            <div className="absolute inset-0 border-2 border-brand-neon/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+            <div className="absolute inset-4 border border-brand-neon/50 rounded-full animate-[spin_15s_linear_infinite_reverse] border-dashed"></div>
+            
+            {/* The Image Container */}
+            <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-brand-neon bg-black relative group">
+              {/* Scanline overlay */}
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,255,65,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-20 bg-[size:100%_4px,3px_100%] pointer-events-none"></div>
+              
+              {/* Green Tint Overlay */}
+              <div className="absolute inset-0 bg-brand-neon/20 mix-blend-overlay z-10"></div>
+              
               <img 
                 src="/lovable-uploads/10ce7542-9eb7-434c-9ad1-22d2092d8ed9.png" 
-                alt="Darkieson" 
-                className="profile-image w-64 h-64 md:w-80 md:h-80 object-cover relative z-10 border-4 border-white shadow-xl" 
+                alt="Operative Darkieson" 
+                className="w-full h-full object-cover filter grayscale contrast-125 brightness-90 group-hover:grayscale-0 transition-all duration-500" 
               />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gray-100 rounded-full -z-10 animate-pulse-slow"></div>
+            </div>
+
+            {/* Floating "Data" Particles (Decorative) */}
+            <div className="absolute -top-10 -right-10 text-brand-neon/40 font-mono text-xs animate-pulse">
+              0x4A5B
+              <br/>
+              PROCESSING...
+            </div>
+            <div className="absolute bottom-0 -left-10 text-brand-neon/40 font-mono text-xs animate-pulse delay-75">
+              LATENCY: 12ms
             </div>
           </div>
-        </div>
-        
-        {/* Scroll Down Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-light">
-          <a href="#about" className="text-gray-400 hover:text-gray-700 transition-colors">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor" 
-              className="h-8 w-8"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-              />
-            </svg>
-          </a>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
