@@ -1,161 +1,148 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useInView } from "react-intersection-observer";
 import { cn } from '@/lib/utils';
-import { Cpu, Wifi, HardDrive, Zap, Globe, Code, Layers, BrainCircuit } from "lucide-react";
-import { motion } from "framer-motion";
+import { Cpu, Database, Terminal, Code2 } from "lucide-react";
 
-interface SkillModule {
+interface Skill {
   name: string;
-  load: number; // 0-100
-  id: string;
-  status: "OPTIMAL" | "HIGH LOAD" | "STABLE";
+  percentage: number;
 }
 
-const coreModules: SkillModule[] = [
-  { name: "UX_ARCHITECTURE", load: 95, id: "MOD_01", status: "OPTIMAL" },
-  { name: "JAVASCRIPT_ENGINE", load: 90, id: "MOD_02", status: "STABLE" },
-  { name: "REACT_CORE", load: 85, id: "MOD_03", status: "STABLE" },
-  { name: "NODE_SERVER", load: 80, id: "MOD_04", status: "STABLE" },
-  { name: "TAILWIND_RENDER", load: 92, id: "MOD_05", status: "OPTIMAL" },
-  { name: "DATABASE_IO", load: 88, id: "MOD_06", status: "HIGH LOAD" },
-  { name: "Typescript", load: 88, id: "MOD_07", status: "HIGH LOAD" },
-  { name: "React-Native", load: 88, id: "MOD_08", status: "HIGH LOAD" },
+interface SoftSkill {
+  name: string;
+}
+
+// Unified colors to "primary" to match the Hacker/Facility theme
+const technicalSkills: Skill[] = [
+  { name: "UX_DESIGN", percentage: 95 },
+  { name: "JAVASCRIPT / TYPESCRIPT", percentage: 90 },
+  { name: "REACT / NEXT.JS", percentage: 85 },
+  { name: "NODE.JS_SERVER", percentage: 80 },
+  { name: "CSS / TAILWIND", percentage: 90 }
 ];
 
-const softProcessors = [
-  { name: "CRITICAL_THINKING", status: "RUNNING", latency: "12ms" },
-  { name: "TEAM_SYNC_PROTOCOL", status: "CONNECTED", latency: "24ms" },
-  { name: "ADAPTABILITY_ALGO", status: "ACTIVE", latency: "8ms" },
-  { name: "CREATIVE_OUTPUT", status: "MAXIMIZED", latency: "15ms" },
+const softSkills: Skill[] = [
+  { name: "PROBLEM_SOLVING", percentage: 95 },
+  { name: "COMMUNICATION_UPLINK", percentage: 85 },
+  { name: "TEAM_SYNC", percentage: 90 },
+  { name: "CREATIVE_ALGO", percentage: 95 }
 ];
 
-const SkillGauge = ({ module, index }: { module: SkillModule; index: number }) => {
-  // Animate the "load" number counting up
-  const [currentLoad, setCurrentLoad] = useState(0);
+const additionalSoftSkills: SoftSkill[] = [
+  { name: "ADAPTABILITY" },
+  { name: "TIME_MANAGEMENT" },
+  { name: "CRITICAL_THINKING" },
+  { name: "LEADERSHIP_PROTOCOL" }
+];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const interval = setInterval(() => {
-        setCurrentLoad(prev => {
-          if (prev >= module.load) {
-            clearInterval(interval);
-            return module.load;
-          }
-          return prev + 1;
-        });
-      }, 20);
-      return () => clearInterval(interval);
-    }, index * 200);
-    return () => clearTimeout(timer);
-  }, [module.load, index]);
-
-  return (
-    <div className="bg-black border border-gray-800 p-4 relative overflow-hidden group hover:border-brand-neon transition-colors">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,65,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,65,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-
-      <div className="relative z-10 flex justify-between items-start mb-4">
-        <div className="flex items-center gap-2 text-gray-500 text-xs font-mono group-hover:text-brand-neon">
-          <HardDrive size={14} />
-          <span>{module.id}</span>
-        </div>
-        <div className={cn(
-          "text-[10px] font-bold px-2 py-0.5 border font-mono",
-          module.status === "OPTIMAL" ? "border-brand-neon text-brand-neon bg-brand-neon/10" : "border-yellow-500 text-yellow-500 bg-yellow-500/10"
-        )}>
-          {module.status}
-        </div>
-      </div>
-
-      <div className="relative z-10">
-        <h3 className="text-white font-bold font-mono text-sm mb-1">{module.name}</h3>
-        
-        <div className="flex items-end gap-2 mb-2">
-          <span className="text-3xl font-display font-bold text-white group-hover:text-brand-neon transition-colors">
-            {currentLoad}%
-          </span>
-          <span className="text-xs text-gray-500 mb-1 font-mono">LOAD_CAPACITY</span>
-        </div>
-
-        {/* The "Bar" Visual */}
-        <div className="h-2 bg-gray-900 w-full overflow-hidden flex gap-0.5">
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i}
-              className={cn(
-                "h-full w-full transition-all duration-300",
-                i < (currentLoad / 5) 
-                  ? "bg-brand-neon shadow-[0_0_5px_rgba(0,255,65,0.5)]" 
-                  : "bg-gray-800"
-              )}
-            />
-          ))}
-        </div>
-      </div>
+// Internal ProgressBar Component for Theme Compatibility
+const ThemeProgressBar = ({ label, value, animate }: { label: string, value: number, animate: boolean }) => (
+  <div className="mb-6 group">
+    <div className="flex justify-between mb-2 font-mono text-xs">
+      <span className="text-foreground font-bold group-hover:text-primary transition-colors flex items-center gap-2">
+        <span className="text-primary opacity-50">{`>`}</span> {label}
+      </span>
+      <span className="text-muted-foreground">{value}%</span>
     </div>
-  );
-};
+    <div className="h-2 w-full bg-secondary overflow-hidden border border-border group-hover:border-primary/50 transition-colors">
+      <div 
+        className={cn(
+          "h-full bg-primary transition-all duration-1000 ease-out shadow-[0_0_10px_var(--neon-glow)]",
+          animate ? "w-full" : "w-0"
+        )}
+        style={{ width: animate ? `${value}%` : '0%' }}
+      />
+    </div>
+  </div>
+);
 
 const Skills = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
   return (
-    <section id="skills" className="py-24 bg-black relative overflow-hidden">
+    <section id="skills" ref={ref} className="py-24 bg-background relative overflow-hidden transition-colors duration-500">
+      {/* Background Grid Pattern */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+            backgroundImage: `linear-gradient(var(--neon-main) 1px, transparent 1px), linear-gradient(90deg, var(--neon-main) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+        }}
+      ></div>
+
       <div className="responsive-container relative z-10">
-        
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-2 text-brand-neon font-mono text-xs tracking-widest uppercase mb-2">
-            <Cpu className="w-4 h-4 animate-spin-slow" />
-            <span>System_Diagnostics</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
-            CORE_MODULES
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 text-xs font-mono px-3 py-1 rounded-none mb-4 uppercase tracking-widest">
+            <Cpu size={12} className="animate-spin-slow" />
+            System_Capabilities
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-4">
+            EXPERTISE_DATABASE
           </h2>
-          <p className="text-gray-400 font-mono text-sm max-w-xl">
-            Real-time analysis of technical capabilities and heuristic subroutines. All systems operating within nominal parameters.
+          <p className="text-muted-foreground max-w-2xl mx-auto font-mono text-sm md:text-base">
+            Comprehensive overview of loaded technical modules and heuristic subroutines.
           </p>
         </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          
-          {/* Column 1 & 2: Technical Skills (Grid) */}
-          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
-            {coreModules.map((mod, i) => (
-              <SkillGauge key={mod.id} module={mod} index={i} />
+        
+        <div className="grid md:grid-cols-2 gap-16">
+          {/* Column 1: Technical Skills */}
+          <div className={cn(
+            "transition-all duration-700 bg-card/30 p-6 border border-border backdrop-blur-sm",
+            inView ? "opacity-100" : "opacity-0 translate-x-[-20px]"
+          )}>
+            <h3 className="text-2xl font-bold mb-8 font-display text-foreground flex items-center gap-2">
+              <Terminal className="text-primary" /> TECHNICAL_STACK
+            </h3>
+            
+            {technicalSkills.map((skill, index) => (
+              <ThemeProgressBar
+                key={index}
+                value={skill.percentage}
+                label={skill.name}
+                animate={inView}
+              />
             ))}
           </div>
-
-          {/* Column 3: Soft Skills (Terminal List) */}
-          <div className="bg-gray-900/30 border border-gray-800 p-6 font-mono text-sm h-full">
-            <div className="flex items-center justify-between border-b border-gray-700 pb-4 mb-4">
-              <span className="text-white font-bold flex items-center gap-2">
-                <BrainCircuit size={16} className="text-brand-neon" />
-                BG_PROCESSES
-              </span>
-              <span className="text-gray-500 text-xs">PID: 8842</span>
-            </div>
-
-            <div className="space-y-4">
-              {softProcessors.map((proc, i) => (
-                <div key={i} className="flex items-center justify-between group">
-                  <div className="flex items-center gap-3">
-                    <span className="text-brand-neon opacity-50 group-hover:opacity-100">{`>`}</span>
-                    <span className="text-gray-300 group-hover:text-white transition-colors">{proc.name}</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-brand-neon text-xs">{proc.status}</div>
-                    <div className="text-gray-600 text-[10px]">{proc.latency}</div>
-                  </div>
+          
+          {/* Column 2: Soft Skills */}
+          <div className={cn(
+            "transition-all duration-700 delay-300 bg-card/30 p-6 border border-border backdrop-blur-sm",
+            inView ? "opacity-100" : "opacity-0 translate-x-[20px]"
+          )}>
+            <h3 className="text-2xl font-bold mb-8 font-display text-foreground flex items-center gap-2">
+              <Database className="text-primary" /> HEURISTIC_DATA
+            </h3>
+            
+            {softSkills.map((skill, index) => (
+              <ThemeProgressBar
+                key={index}
+                value={skill.percentage}
+                label={skill.name}
+                animate={inView}
+              />
+            ))}
+            
+            {/* Additional Skills Grid */}
+            <div className={cn(
+              "grid grid-cols-2 gap-4 mt-8 transition-all duration-700 delay-500 border-t border-border pt-8",
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              {additionalSoftSkills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className="bg-card border border-border p-4 text-center hover:border-primary transition-colors group cursor-default"
+                >
+                  <span className="font-mono text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors flex items-center justify-center gap-2">
+                    <Code2 size={12} className="opacity-50" />
+                    {skill.name}
+                  </span>
                 </div>
               ))}
             </div>
-
-            <div className="mt-8 pt-4 border-t border-gray-700">
-              <div className="flex items-center gap-2 text-gray-500 text-xs">
-                <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse"></div>
-                System stable. Memory usage: 42%
-              </div>
-            </div>
           </div>
-
         </div>
       </div>
     </section>

@@ -1,51 +1,56 @@
+import React, { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+import { motion } from "framer-motion";
 
-import React from "react";
-import { Sun, Moon, Settings } from "lucide-react";
-
-type Theme = 'light' | 'dark' | 'system';
-
-const themes: { type: Theme; label: string; icon: React.ReactNode }[] = [
-  { type: "light", label: "Light", icon: <Sun className="w-6 h-6" /> },
-  { type: "dark", label: "Dark", icon: <Moon className="w-6 h-6" /> },
-  { type: "system", label: "System", icon: <Settings className="w-6 h-6" /> }
-];
-
-function getSystemTheme() {
-  if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
-    return "dark";
-  }
-  return "light";
-}
+type Theme = "light" | "dark";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = React.useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || "system"
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Default to dark if no preference
+    return (localStorage.getItem("theme") as Theme) || "dark";
+  });
 
-  React.useEffect(() => {
-    let desiredTheme = theme;
-    if (theme === "system") {
-      desiredTheme = getSystemTheme();
-    }
-    document.documentElement.classList.toggle("dark", desiredTheme === "dark");
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   return (
-    <div className="relative  inline-block ">
-      <select
-        className="appearance-none w-24 right-0 bg-white flex justify-between dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded px-2 py-1 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-blue cursor-pointer transition"
-        value={theme}
-        onChange={e => setTheme(e.target.value as Theme)}
-        aria-label="Theme Toggle"
-      >
-        {themes.map(({ type, label }) => (
-          <option value={type} key={type}>{label}</option>
-        ))}
-      </select>
-      <span className="absolute left-16 top-1 pointer-events-none">
-        {themes.find(t => t.type === theme)?.icon}
-      </span>
-    </div>
+    <button
+      onClick={toggleTheme}
+      className="relative h-8 w-16 rounded-none border border-brand-neon/50 bg-black/50 backdrop-blur-sm p-1 transition-colors hover:border-brand-neon group"
+      aria-label="Toggle System Theme"
+    >
+      {/* The Moving Switch (Pill) */}
+      <motion.div
+        layout
+        transition={{ type: "spring", stiffness: 700, damping: 30 }}
+        className={`absolute top-1 bottom-1 w-6 bg-brand-neon shadow-[0_0_10px_var(--neon-main)] ${
+          theme === "dark" ? "left-1" : "right-1"
+        }`}
+      />
+
+      {/* Icons */}
+      <div className="relative z-10 flex h-full w-full items-center justify-between px-1">
+        <Moon
+          size={14}
+          className={`transition-colors ${
+            theme === "dark" ? "text-black" : "text-gray-500"
+          }`}
+        />
+        <Sun
+          size={14}
+          className={`transition-colors ${
+            theme === "light" ? "text-black" : "text-gray-500"
+          }`}
+        />
+      </div>
+    </button>
   );
 }
