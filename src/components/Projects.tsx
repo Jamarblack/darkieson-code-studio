@@ -47,6 +47,26 @@ const projects: Project[] = [
     securityLevel: "CONFIDENTIAL"
   },
   {
+    id: 7,
+    title: "Citadel of Knowledge",
+    category: "Institutional Portal",
+    description: "Comprehensive educational management system for Citadel of Knowledge International School, featuring streamlined administrative workflows.",
+    image: "public/Citadel.png", // Add your preview image URL here
+    technologies: ["React", "Tailwind CSS", "Supabase", "TypeScript"],
+    demoUrl: "https://www.citadelofknowledgeinternationalschool-college.com/",
+    securityLevel: "CONFIDENTIAL"
+  },
+  {
+    id: 8,
+    title: "Al-Mustapha Schools",
+    category: "Institutional Portal",
+    description: "Digital infrastructure for Al-Mustapha Model Schools, facilitating seamless interaction between students, parents, and administration.",
+    image: "public/Al-Mustapha.png", // Add your preview image URL here
+    technologies: ["React", "Supabase", "TypeScript"],
+    demoUrl: "https://almustpahamodelschools.com/",
+    securityLevel: "TOP SECRET"
+  },
+  {
     id: 4,
     title: "Finance Dashboard",
     category: "Data Visualization",
