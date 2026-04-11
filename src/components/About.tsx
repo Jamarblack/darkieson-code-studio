@@ -55,8 +55,8 @@ const About = () => {
             <span>Identity_Verification_Protocol</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-6">
-            OPERATIVE <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">PROFILE</span>
+          <h2 className="text-4xl md:text-5xl font-bold divide-x-4 font-display text-foreground mb-6">
+            OPERATIVE <span className="text-transparent bg-clip-text bg-primary">PROFILE</span>
           </h2>
         </div>
 
