@@ -34,7 +34,7 @@ const socials = [
 
 const ContactSocials = () => {
   return (
-    <div className="mt-8 pt-8 border-t bg-black border-gray-800">
+    <div className="mt-8 pt-8 border-t bg-gray-50 dark:bg-black border-gray-800">
       <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-mono">
         Establish_Connection_Via:
       </div>
@@ -45,13 +45,13 @@ const ContactSocials = () => {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 px-4 py-2 bg-gray-900 border border-gray-800 hover:border-brand-neon hover:bg-black transition-all"
+            className="group flex items-center gap-3 px-4 py-2 bg-primary border border-slate-900 hover:border-brand-neon hover:bg-black transition-all"
           >
-            <social.icon size={16} className="text-gray-400 group-hover:text-brand-neon" />
-            <span className="text-xs font-mono text-gray-300 group-hover:text-white">
+            <social.icon size={16} className="text-gray-900 group-hover:text-brand-neon" />
+            <span className="text-xs font-mono text-gray-950 group-hover:text-white">
               {social.name}
             </span>
-            <span className="text-[8px] px-1 bg-gray-800 text-gray-500 rounded group-hover:bg-brand-neon group-hover:text-black transition-colors">
+            <span className="text-[8px] px-1 bg-gray-900 text-gray-500 rounded group-hover:bg-brand-neon group-hover:text-black transition-colors">
               {social.status}
             </span>
           </a>

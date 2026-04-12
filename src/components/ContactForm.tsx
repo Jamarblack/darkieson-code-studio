@@ -11,9 +11,9 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    const SERVICE_ID = 'YOUR_SERVICE_ID'; 
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID; 
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY)
       .then(() => {
