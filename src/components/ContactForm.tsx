@@ -72,7 +72,7 @@ const ContactForm: React.FC = () => {
           :: OR SELECT DIRECT ENCRYPTED CHANNEL ::
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/2348082121149" target="_blank" rel="noreferrer"
              className="flex items-center justify-center gap-2 py-2 border border-border text-muted-foreground hover:border-green-500 hover:text-green-500 hover:bg-green-500/10 transition-all cursor-pointer">
             <Smartphone size={16} /> <span className="text-xs font-bold">WHATSAPP</span>
           </a>
