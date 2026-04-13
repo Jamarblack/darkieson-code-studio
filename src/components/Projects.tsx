@@ -82,7 +82,7 @@ const projects: Project[] = [
     category: "Network Infrastructure",
     description: "Decentralized communication node with real-time messaging and content distribution capabilities.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3",
-    technologies: ["React Native", "GraphQL", "Apollo", "MongoDB"],
+    technologies: ["React Native", "React", "TailwindCSS", "Supabase"],
     demoUrl: "https://huppy.vercel.app",
     securityLevel: "PUBLIC"
   },

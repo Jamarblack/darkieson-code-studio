@@ -34,7 +34,7 @@ const socials = [
 
 const ContactSocials = () => {
   return (
-    <div className="mt-8 pt-8 border-t bg-gray-50 dark:bg-black border-gray-800">
+    <div className="mt-8 pt-8 border-t px-5 bg-gray-50 dark:bg-black border-gray-800">
       <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-mono">
         Establish_Connection_Via:
       </div>
