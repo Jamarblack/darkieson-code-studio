@@ -94,10 +94,10 @@ const About = () => {
 
           {/* Column 2: Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <StatBlock label="Total Runtime" value="5+ YEARS" icon={History} delay={0.2} />
+            {/* <StatBlock label="Total Runtime" value="5+ YEARS" icon={History} delay={0.2} />
              <StatBlock label="Missions Complete" value="50+" icon={Database} delay={0.3} />
              <StatBlock label="Client Uplinks" value="30+" icon={User} delay={0.4} />
-             <StatBlock label="Tech Arsenal" value="15+" icon={Zap} delay={0.5} />
+             <StatBlock label="Tech Arsenal" value="15+" icon={Zap} delay={0.5} /> */}
             
             {/* System Status Box */}
             <motion.div 

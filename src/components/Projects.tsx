@@ -47,27 +47,47 @@ const projects: Project[] = [
     securityLevel: "CONFIDENTIAL"
   },
   {
-    id: 7,
+    id: 4,
     title: "Citadel of Knowledge",
     category: "Institutional Portal",
     description: "Comprehensive educational management system for Citadel of Knowledge International School, featuring streamlined administrative workflows.",
-    image: "public/Citadel.png", // Add your preview image URL here
+    image: "/Citadel.png", // Add your preview image URL here
     technologies: ["React", "Tailwind CSS", "Supabase", "TypeScript"],
     demoUrl: "https://www.citadelofknowledgeinternationalschool-college.com/",
     securityLevel: "CONFIDENTIAL"
   },
   {
-    id: 8,
+    id: 5,
     title: "Al-Mustapha Schools",
     category: "Institutional Portal",
     description: "Digital infrastructure for Al-Mustapha Model Schools, facilitating seamless interaction between students, parents, and administration.",
-    image: "public/Al-Mustapha.png", // Add your preview image URL here
+    image: "/Al-Mustapha.png",
     technologies: ["React", "Supabase", "TypeScript"],
     demoUrl: "https://almustpahamodelschools.com/",
     securityLevel: "TOP SECRET"
   },
+   {
+    id: 6,
+    title: "Umami House Restaurant Kuwait",
+    category: "Institutional Portal",
+    description: "Digital infrastructure for Umami Restaurant, facilitating seamless Food Ordering and , parents, and administration.",
+    image: "/umami-restaurant.png", 
+    technologies: ["React", "Supabase", "TypeScript", "Tailwind CSS", "Language switch"],
+    demoUrl: "https://the-umami-house-restaurant.vercel.app/",
+    securityLevel: "TOP SECRET"
+  },
+   {
+    id: 7,
+    title: "Myara",
+    category: "Skin Cre and Hair Care",
+    description: "Digital structure for Myara.ng , facilitating online store, Online customers , and administration.",
+    image: "/myara.png",
+    technologies: ["React", "Supabase", "TypeScript", "Tailwind CSS", "Whatsapp API"],
+    demoUrl: "https://myara-glow.vercel.app/",
+    securityLevel: "TOP SECRET"
+  },
   {
-    id: 4,
+    id: 8,
     title: "Finance Dashboard",
     category: "Data Visualization",
     description: "Real-time analytics engine providing financial data visualization and asset tracking.",
@@ -77,7 +97,7 @@ const projects: Project[] = [
     securityLevel: "TOP SECRET"
   },
   {
-    id: 5,
+    id: 9,
     title: "Social Media Platform",
     category: "Network Infrastructure",
     description: "Decentralized communication node with real-time messaging and content distribution capabilities.",
@@ -87,7 +107,7 @@ const projects: Project[] = [
     securityLevel: "PUBLIC"
   },
   {
-    id: 6,
+    id: 10,
     title: "Weather Application",
     category: "Environmental Scanner",
     description: "Atmospheric monitoring system providing accurate forecasts with animated data visualizations.",
